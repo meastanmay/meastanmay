@@ -68,6 +68,10 @@
     <filter id="softShadow">
       <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,0.4)"/>
     </filter>
+    <filter id="pillGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
     <filter id="noise">
       <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch" result="n"/>
       <feColorMatrix type="saturate" values="0" in="n" result="gn"/>
@@ -130,41 +134,41 @@
     </g>
 
     <!-- ASCII Art -->
-    <g fill="url(#asciiGrad)" font-family="'SF Mono',Monaco,'Courier New',monospace" font-size="9.5" letter-spacing="0.5" filter="url(#glow)">
+    <g fill="url(#asciiGrad)" font-family="'SF Mono',Monaco,'Courier New',monospace" font-size="11" letter-spacing="0.5" filter="url(#glow)">
       <animateTransform attributeName="transform" type="translate" values="0,0;0,-3;0,0" dur="5s" repeatCount="indefinite"/>
-      <text x="78" y="72.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.10s" dur="0.3s" fill="freeze"/>........     .=#@█@@@██#*-:.       .........</text>
-      <text x="78" y="83.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.22s" dur="0.3s" fill="freeze"/>.....    .-*#%@████████@@%%##+:.      ......</text>
-      <text x="78" y="95.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.34s" dur="0.3s" fill="freeze"/>...      -#██████████@@@@@@@█@#-         ...</text>
-      <text x="78" y="106.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.46s" dur="0.3s" fill="freeze"/>.        =@███████@@%#*+==+*%@@#:          .</text>
-      <text x="78" y="118.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.58s" dur="0.3s" fill="freeze"/>         -@█@%%##**+=-:..::-=*%%+           </text>
-      <text x="78" y="129.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.70s" dur="0.3s" fill="freeze"/>         .*%##*+==--::.....:-=*#=           </text>
-      <text x="78" y="141.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.82s" dur="0.3s" fill="freeze"/>          -*##**+=------------+*-           </text>
-      <text x="78" y="152.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.94s" dur="0.3s" fill="freeze"/>          :+#%%%%#*+=+*###*+=-=+-           </text>
-      <text x="78" y="164.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.06s" dur="0.3s" fill="freeze"/>          -+#%%@@@#+-+#%%#*+=-=+=:          </text>
-      <text x="78" y="175.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.18s" dur="0.3s" fill="freeze"/>          -+**####*=::=++=-::-===:          </text>
-      <text x="78" y="187.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.30s" dur="0.3s" fill="freeze"/>           =+*+++**=---::::::-=-.           </text>
-      <text x="78" y="198.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.42s" dur="0.3s" fill="freeze"/>           :+***#%%%##+-----=+=:            </text>
-      <text x="78" y="210.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.54s" dur="0.3s" fill="freeze"/>            =##%@@@@@%#***++##-             </text>
-      <text x="78" y="221.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.66s" dur="0.3s" fill="freeze"/>            .+%%@@@@@%#*###%%*:.            </text>
-      <text x="78" y="233.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.78s" dur="0.3s" fill="freeze"/>             .+@@@@██%**#%@%*-=+-.          </text>
-      <text x="78" y="244.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.90s" dur="0.3s" fill="freeze"/>             .+@█████@%%@@#+-=#%%+-.        </text>
-      <text x="78" y="256.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.02s" dur="0.3s" fill="freeze"/>       ..:-=++#████████@#+-:+%@@@%%*+=:..   </text>
-      <text x="78" y="267.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.14s" dur="0.3s" fill="freeze"/> ..:-=+*#%@@@#%████@@@#=:.:+%@@@@@@@@@%*+=- </text>
-      <text x="78" y="279.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.26s" dur="0.3s" fill="freeze"/>+*#%@@██████@@%%@@%***+:.:*%@@@@@@█████@@@%@</text>
-      <text x="78" y="290.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.38s" dur="0.3s" fill="freeze"/>█████████████@##*#+==+*+-*%@@@@@@███████████</text>
-      <text x="78" y="302.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.50s" dur="0.3s" fill="freeze"/>████████████%*+++=---==+#@@@@@@@████████████</text>
-      <text x="78" y="313.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.62s" dur="0.3s" fill="freeze"/>███████████@*=---:::::-#@@@@@███████████████</text>
-      <text x="78" y="325.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.74s" dur="0.3s" fill="freeze"/>███████████+---:.  ...*█@@@█████████████████</text>
+      <text x="78" y="74.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.10s" dur="0.3s" fill="freeze"/>          .:-==+++==-:.          </text>
+      <text x="78" y="86.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.22s" dur="0.3s" fill="freeze"/>        :=*#%@@@@@@@%#*=:        </text>
+      <text x="78" y="99.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.34s" dur="0.3s" fill="freeze"/>      -*%@@@@@@@@@@@@@@@%*-      </text>
+      <text x="78" y="111.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.46s" dur="0.3s" fill="freeze"/>     =%@@@@@@@@@@@@@@@@@@@%=     </text>
+      <text x="78" y="124.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.58s" dur="0.3s" fill="freeze"/>    +@@@@@@@@@@@@@@@@@@@@@@@+    </text>
+      <text x="78" y="136.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.70s" dur="0.3s" fill="freeze"/>   :@@@@@@@#*++===++*#@@@@@@@:   </text>
+      <text x="78" y="149.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.82s" dur="0.3s" fill="freeze"/>   #@@@@@*-::::::::::::-*@@@@@#  </text>
+      <text x="78" y="161.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.94s" dur="0.3s" fill="freeze"/>   @@@@#:::::::::::::::::.#@@@@  </text>
+      <text x="78" y="174.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.06s" dur="0.3s" fill="freeze"/>  .@@@#..:=+=-:::::-=+=:..#@@@.  </text>
+      <text x="78" y="186.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.18s" dur="0.3s" fill="freeze"/>  :@@@:.:+@@@+:::::+@@@+:.:@@@:  </text>
+      <text x="78" y="199.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.30s" dur="0.3s" fill="freeze"/>  .@@@=..:=+-:..:..:-+=:..=@@@.  </text>
+      <text x="78" y="211.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.42s" dur="0.3s" fill="freeze"/>   @@@#...:...:###:...:...#@@@   </text>
+      <text x="78" y="224.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.54s" dur="0.3s" fill="freeze"/>   #@@@=......:###:......=@@@#   </text>
+      <text x="78" y="236.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.66s" dur="0.3s" fill="freeze"/>   :@@@%-....:+###+....-%@@@:    </text>
+      <text x="78" y="249.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.78s" dur="0.3s" fill="freeze"/>    +@@@@+:..-*###*-..:+@@@@+    </text>
+      <text x="78" y="261.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.90s" dur="0.3s" fill="freeze"/>     =@@@@%*=-=+++=-=*%@@@@=     </text>
+      <text x="78" y="274.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.02s" dur="0.3s" fill="freeze"/>      -*@@@@@%#***#%@@@@@*-      </text>
+      <text x="78" y="286.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.14s" dur="0.3s" fill="freeze"/>     .:-=*%@@@@@@@@@@%*=-:.      </text>
+      <text x="78" y="299.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.26s" dur="0.3s" fill="freeze"/>   :=*##*+=+*#%%%%%#*+=+*##*=:   </text>
+      <text x="78" y="311.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.38s" dur="0.3s" fill="freeze"/> -*%@@@@@@%#+=-----=+#%@@@@@@%*- </text>
+      <text x="78" y="324.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.50s" dur="0.3s" fill="freeze"/>+@@@@@@@@@@@@%#***#%@@@@@@@@@@@@+</text>
+      <text x="78" y="336.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.62s" dur="0.3s" fill="freeze"/>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</text>
+      <text x="78" y="349.0" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2.74s" dur="0.3s" fill="freeze"/>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</text>
     </g>
 
-    <rect x="260" y="342.5" width="8" height="14" fill="url(#asciiGrad)" opacity="0">
+    <rect x="260" y="367.5" width="8" height="14" fill="url(#asciiGrad)" opacity="0">
       <animate attributeName="opacity" values="0;0;1;1;0" dur="1.2s" repeatCount="indefinite" begin="3.2s"/>
     </rect>
-    <text x="234" y="370.5" fill="url(#accentGrad)" font-family="'SF Mono',Monaco,monospace" font-size="14" text-anchor="middle" font-weight="bold" opacity="0" filter="url(#glow)">
+    <text x="234" y="391.5" fill="url(#accentGrad)" font-family="'SF Mono',Monaco,monospace" font-size="14" text-anchor="middle" font-weight="bold" opacity="0" filter="url(#glow)">
       <animate attributeName="opacity" from="0" to="1" begin="3.4s" dur="0.5s" fill="freeze"/>
       &gt; TANMAY AGARWAL
     </text>
-    <text x="234" y="388.5" fill="#94A3B8" font-family="'SF Mono',Monaco,monospace" font-size="10" text-anchor="middle" opacity="0">
+    <text x="234" y="409.5" fill="#94A3B8" font-family="'SF Mono',Monaco,monospace" font-size="10" text-anchor="middle" opacity="0">
       <animate attributeName="opacity" from="0" to="0.6" begin="3.6s" dur="0.5s" fill="freeze"/>
       Data Scientist &amp; AI Engineer
     </text>
@@ -230,22 +234,18 @@
     <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="3.8s" dur="0.5s" fill="freeze"/>
       <!-- Python -->
       <g transform="translate(521.0,375.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="0.0s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="0.0s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-31.0" y="-13.0" width="62" height="26" rx="13"
-            fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.3)" stroke-width="0.8">
+            fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.3)" stroke-width="1">
             <animate attributeName="fill" values="rgba(124,58,237,0.15);rgba(124,58,237,0.35);rgba(124,58,237,0.15)"
-              dur="14.5s" begin="0.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(124,58,237,0.3);rgba(124,58,237,0.7);rgba(124,58,237,0.3)"
-              dur="14.5s" begin="0.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="0.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#C4B5FD" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">Python</text>
@@ -253,22 +253,18 @@
       </g>
       <!-- PySpark -->
       <g transform="translate(596.0,375.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="0.5s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="0.3s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-36.0" y="-13.0" width="72" height="26" rx="13"
-            fill="rgba(34,211,238,0.12)" stroke="rgba(34,211,238,0.25)" stroke-width="0.8">
+            fill="rgba(34,211,238,0.12)" stroke="rgba(34,211,238,0.25)" stroke-width="1">
             <animate attributeName="fill" values="rgba(34,211,238,0.12);rgba(34,211,238,0.3);rgba(34,211,238,0.12)"
-              dur="14.5s" begin="0.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(34,211,238,0.25);rgba(34,211,238,0.6);rgba(34,211,238,0.25)"
-              dur="14.5s" begin="0.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="0.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="0.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#67E8F9" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">PySpark</text>
@@ -276,22 +272,18 @@
       </g>
       <!-- SQL -->
       <g transform="translate(664.0,375.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="1.0s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="0.6s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-24.0" y="-13.0" width="48" height="26" rx="13"
-            fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.25)" stroke-width="0.8">
+            fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.25)" stroke-width="1">
             <animate attributeName="fill" values="rgba(16,185,129,0.12);rgba(16,185,129,0.3);rgba(16,185,129,0.12)"
-              dur="14.5s" begin="1.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(16,185,129,0.25);rgba(16,185,129,0.6);rgba(16,185,129,0.25)"
-              dur="14.5s" begin="1.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="1.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="0.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#6EE7B7" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">SQL</text>
@@ -299,22 +291,18 @@
       </g>
       <!-- TensorFlow -->
       <g transform="translate(741.0,375.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="1.5s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="0.9s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-45.0" y="-13.0" width="90" height="26" rx="13"
-            fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.3)" stroke-width="0.8">
+            fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.3)" stroke-width="1">
             <animate attributeName="fill" values="rgba(124,58,237,0.15);rgba(124,58,237,0.35);rgba(124,58,237,0.15)"
-              dur="14.5s" begin="1.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(124,58,237,0.3);rgba(124,58,237,0.7);rgba(124,58,237,0.3)"
-              dur="14.5s" begin="1.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="1.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="0.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#C4B5FD" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">TensorFlow</text>
@@ -322,22 +310,18 @@
       </g>
       <!-- LangChain -->
       <g transform="translate(835.0,375.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="2.0s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="1.2s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-41.0" y="-13.0" width="82" height="26" rx="13"
-            fill="rgba(34,211,238,0.12)" stroke="rgba(34,211,238,0.25)" stroke-width="0.8">
+            fill="rgba(34,211,238,0.12)" stroke="rgba(34,211,238,0.25)" stroke-width="1">
             <animate attributeName="fill" values="rgba(34,211,238,0.12);rgba(34,211,238,0.3);rgba(34,211,238,0.12)"
-              dur="14.5s" begin="2.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(34,211,238,0.25);rgba(34,211,238,0.6);rgba(34,211,238,0.25)"
-              dur="14.5s" begin="2.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="2.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="1.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#67E8F9" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">LangChain</text>
@@ -345,22 +329,18 @@
       </g>
       <!-- AWS -->
       <g transform="translate(909.0,375.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="2.5s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="1.5s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-25.0" y="-13.0" width="50" height="26" rx="13"
-            fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.25)" stroke-width="0.8">
+            fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.25)" stroke-width="1">
             <animate attributeName="fill" values="rgba(16,185,129,0.12);rgba(16,185,129,0.3);rgba(16,185,129,0.12)"
-              dur="14.5s" begin="2.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(16,185,129,0.25);rgba(16,185,129,0.6);rgba(16,185,129,0.25)"
-              dur="14.5s" begin="2.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="2.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#6EE7B7" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">AWS</text>
@@ -370,22 +350,18 @@
     <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="4.1s" dur="0.5s" fill="freeze"/>
       <!-- Pandas -->
       <g transform="translate(523.5,409.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="3.0s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="1.8s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-33.5" y="-13.0" width="67" height="26" rx="13"
-            fill="rgba(34,211,238,0.12)" stroke="rgba(34,211,238,0.25)" stroke-width="0.8">
+            fill="rgba(34,211,238,0.12)" stroke="rgba(34,211,238,0.25)" stroke-width="1">
             <animate attributeName="fill" values="rgba(34,211,238,0.12);rgba(34,211,238,0.3);rgba(34,211,238,0.12)"
-              dur="14.5s" begin="3.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(34,211,238,0.25);rgba(34,211,238,0.6);rgba(34,211,238,0.25)"
-              dur="14.5s" begin="3.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="3.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="1.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#67E8F9" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">Pandas</text>
@@ -393,22 +369,18 @@
       </g>
       <!-- NumPy -->
       <g transform="translate(596.0,409.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="3.5s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="2.1s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-31.0" y="-13.0" width="62" height="26" rx="13"
-            fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.3)" stroke-width="0.8">
+            fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.3)" stroke-width="1">
             <animate attributeName="fill" values="rgba(124,58,237,0.15);rgba(124,58,237,0.35);rgba(124,58,237,0.15)"
-              dur="14.5s" begin="3.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="2.1s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(124,58,237,0.3);rgba(124,58,237,0.7);rgba(124,58,237,0.3)"
-              dur="14.5s" begin="3.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="3.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="2.1s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="2.1s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#C4B5FD" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">NumPy</text>
@@ -416,22 +388,18 @@
       </g>
       <!-- Scikit-learn -->
       <g transform="translate(679.0,409.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="4.0s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="0.0s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-44.0" y="-13.0" width="88" height="26" rx="13"
-            fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.25)" stroke-width="0.8">
+            fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.25)" stroke-width="1">
             <animate attributeName="fill" values="rgba(16,185,129,0.12);rgba(16,185,129,0.3);rgba(16,185,129,0.12)"
-              dur="14.5s" begin="4.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(16,185,129,0.25);rgba(16,185,129,0.6);rgba(16,185,129,0.25)"
-              dur="14.5s" begin="4.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="4.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#6EE7B7" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">Scikit-learn</text>
@@ -439,22 +407,18 @@
       </g>
       <!-- Keras -->
       <g transform="translate(760.0,409.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="4.5s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="0.3s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-29.0" y="-13.0" width="58" height="26" rx="13"
-            fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.3)" stroke-width="0.8">
+            fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.3)" stroke-width="1">
             <animate attributeName="fill" values="rgba(124,58,237,0.15);rgba(124,58,237,0.35);rgba(124,58,237,0.15)"
-              dur="14.5s" begin="4.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(124,58,237,0.3);rgba(124,58,237,0.7);rgba(124,58,237,0.3)"
-              dur="14.5s" begin="4.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="4.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="0.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#C4B5FD" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">Keras</text>
@@ -462,22 +426,18 @@
       </g>
       <!-- Airflow -->
       <g transform="translate(832.0,409.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="5.0s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="0.6s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-35.0" y="-13.0" width="70" height="26" rx="13"
-            fill="rgba(34,211,238,0.12)" stroke="rgba(34,211,238,0.25)" stroke-width="0.8">
+            fill="rgba(34,211,238,0.12)" stroke="rgba(34,211,238,0.25)" stroke-width="1">
             <animate attributeName="fill" values="rgba(34,211,238,0.12);rgba(34,211,238,0.3);rgba(34,211,238,0.12)"
-              dur="14.5s" begin="5.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(34,211,238,0.25);rgba(34,211,238,0.6);rgba(34,211,238,0.25)"
-              dur="14.5s" begin="5.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="5.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="0.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#67E8F9" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">Airflow</text>
@@ -485,22 +445,18 @@
       </g>
       <!-- Azure -->
       <g transform="translate(906.0,409.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="5.5s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="0.9s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-31.0" y="-13.0" width="62" height="26" rx="13"
-            fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.25)" stroke-width="0.8">
+            fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.25)" stroke-width="1">
             <animate attributeName="fill" values="rgba(16,185,129,0.12);rgba(16,185,129,0.3);rgba(16,185,129,0.12)"
-              dur="14.5s" begin="5.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(16,185,129,0.25);rgba(16,185,129,0.6);rgba(16,185,129,0.25)"
-              dur="14.5s" begin="5.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="5.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="0.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#6EE7B7" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">Azure</text>
@@ -510,22 +466,18 @@
     <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="4.4s" dur="0.5s" fill="freeze"/>
       <!-- Databricks -->
       <g transform="translate(534.0,443.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="6.0s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="1.2s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-44.0" y="-13.0" width="88" height="26" rx="13"
-            fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.3)" stroke-width="0.8">
+            fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.3)" stroke-width="1">
             <animate attributeName="fill" values="rgba(124,58,237,0.15);rgba(124,58,237,0.35);rgba(124,58,237,0.15)"
-              dur="14.5s" begin="6.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(124,58,237,0.3);rgba(124,58,237,0.7);rgba(124,58,237,0.3)"
-              dur="14.5s" begin="6.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="6.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="1.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#C4B5FD" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">Databricks</text>
@@ -533,22 +485,18 @@
       </g>
       <!-- Tableau -->
       <g transform="translate(621.0,443.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="6.5s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="1.5s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-35.0" y="-13.0" width="70" height="26" rx="13"
-            fill="rgba(34,211,238,0.12)" stroke="rgba(34,211,238,0.25)" stroke-width="0.8">
+            fill="rgba(34,211,238,0.12)" stroke="rgba(34,211,238,0.25)" stroke-width="1">
             <animate attributeName="fill" values="rgba(34,211,238,0.12);rgba(34,211,238,0.3);rgba(34,211,238,0.12)"
-              dur="14.5s" begin="6.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(34,211,238,0.25);rgba(34,211,238,0.6);rgba(34,211,238,0.25)"
-              dur="14.5s" begin="6.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="6.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#67E8F9" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">Tableau</text>
@@ -556,22 +504,18 @@
       </g>
       <!-- Power BI -->
       <g transform="translate(700.0,443.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="7.0s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="1.8s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-36.0" y="-13.0" width="72" height="26" rx="13"
-            fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.25)" stroke-width="0.8">
+            fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.25)" stroke-width="1">
             <animate attributeName="fill" values="rgba(16,185,129,0.12);rgba(16,185,129,0.3);rgba(16,185,129,0.12)"
-              dur="14.5s" begin="7.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(16,185,129,0.25);rgba(16,185,129,0.6);rgba(16,185,129,0.25)"
-              dur="14.5s" begin="7.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="7.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="1.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#6EE7B7" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">Power BI</text>
@@ -579,22 +523,18 @@
       </g>
       <!-- Docker -->
       <g transform="translate(775.0,443.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="7.5s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="2.1s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-31.0" y="-13.0" width="62" height="26" rx="13"
-            fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.3)" stroke-width="0.8">
+            fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.3)" stroke-width="1">
             <animate attributeName="fill" values="rgba(124,58,237,0.15);rgba(124,58,237,0.35);rgba(124,58,237,0.15)"
-              dur="14.5s" begin="7.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="2.1s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(124,58,237,0.3);rgba(124,58,237,0.7);rgba(124,58,237,0.3)"
-              dur="14.5s" begin="7.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="7.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="2.1s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="2.1s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#C4B5FD" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">Docker</text>
@@ -602,22 +542,18 @@
       </g>
       <!-- R -->
       <g transform="translate(835.0,443.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="8.0s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="0.0s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-21.0" y="-13.0" width="42" height="26" rx="13"
-            fill="rgba(34,211,238,0.12)" stroke="rgba(34,211,238,0.25)" stroke-width="0.8">
+            fill="rgba(34,211,238,0.12)" stroke="rgba(34,211,238,0.25)" stroke-width="1">
             <animate attributeName="fill" values="rgba(34,211,238,0.12);rgba(34,211,238,0.3);rgba(34,211,238,0.12)"
-              dur="14.5s" begin="8.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(34,211,238,0.25);rgba(34,211,238,0.6);rgba(34,211,238,0.25)"
-              dur="14.5s" begin="8.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="8.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#67E8F9" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">R</text>
@@ -625,22 +561,18 @@
       </g>
       <!-- Spark -->
       <g transform="translate(890.0,443.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="8.5s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="0.3s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-26.0" y="-13.0" width="52" height="26" rx="13"
-            fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.25)" stroke-width="0.8">
+            fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.25)" stroke-width="1">
             <animate attributeName="fill" values="rgba(16,185,129,0.12);rgba(16,185,129,0.3);rgba(16,185,129,0.12)"
-              dur="14.5s" begin="8.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(16,185,129,0.25);rgba(16,185,129,0.6);rgba(16,185,129,0.25)"
-              dur="14.5s" begin="8.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="8.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="0.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#6EE7B7" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">Spark</text>
@@ -650,22 +582,18 @@
     <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="4.7s" dur="0.5s" fill="freeze"/>
       <!-- Hive -->
       <g transform="translate(515.0,477.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="9.0s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="0.6s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-25.0" y="-13.0" width="50" height="26" rx="13"
-            fill="rgba(34,211,238,0.12)" stroke="rgba(34,211,238,0.25)" stroke-width="0.8">
+            fill="rgba(34,211,238,0.12)" stroke="rgba(34,211,238,0.25)" stroke-width="1">
             <animate attributeName="fill" values="rgba(34,211,238,0.12);rgba(34,211,238,0.3);rgba(34,211,238,0.12)"
-              dur="14.5s" begin="9.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(34,211,238,0.25);rgba(34,211,238,0.6);rgba(34,211,238,0.25)"
-              dur="14.5s" begin="9.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="9.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="0.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#67E8F9" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">Hive</text>
@@ -673,22 +601,18 @@
       </g>
       <!-- NLP -->
       <g transform="translate(572.0,477.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="9.5s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="0.9s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-24.0" y="-13.0" width="48" height="26" rx="13"
-            fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.3)" stroke-width="0.8">
+            fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.3)" stroke-width="1">
             <animate attributeName="fill" values="rgba(124,58,237,0.15);rgba(124,58,237,0.35);rgba(124,58,237,0.15)"
-              dur="14.5s" begin="9.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(124,58,237,0.3);rgba(124,58,237,0.7);rgba(124,58,237,0.3)"
-              dur="14.5s" begin="9.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="9.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="0.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="0.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#C4B5FD" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">NLP</text>
@@ -696,22 +620,18 @@
       </g>
       <!-- Deep Learning -->
       <g transform="translate(653.0,477.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="10.0s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="1.2s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-49.0" y="-13.0" width="98" height="26" rx="13"
-            fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.25)" stroke-width="0.8">
+            fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.25)" stroke-width="1">
             <animate attributeName="fill" values="rgba(16,185,129,0.12);rgba(16,185,129,0.3);rgba(16,185,129,0.12)"
-              dur="14.5s" begin="10.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(16,185,129,0.25);rgba(16,185,129,0.6);rgba(16,185,129,0.25)"
-              dur="14.5s" begin="10.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="10.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="1.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#6EE7B7" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">Deep Learning</text>
@@ -719,22 +639,18 @@
       </g>
       <!-- RAG -->
       <g transform="translate(734.0,477.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="10.5s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="1.5s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-24.0" y="-13.0" width="48" height="26" rx="13"
-            fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.3)" stroke-width="0.8">
+            fill="rgba(124,58,237,0.15)" stroke="rgba(124,58,237,0.3)" stroke-width="1">
             <animate attributeName="fill" values="rgba(124,58,237,0.15);rgba(124,58,237,0.35);rgba(124,58,237,0.15)"
-              dur="14.5s" begin="10.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(124,58,237,0.3);rgba(124,58,237,0.7);rgba(124,58,237,0.3)"
-              dur="14.5s" begin="10.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="10.5s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#C4B5FD" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">RAG</text>
@@ -742,22 +658,18 @@
       </g>
       <!-- Git -->
       <g transform="translate(790.0,477.0)">
-        <g>
-          <animateTransform attributeName="transform" type="scale"
-            values="1,1;1.08,1.08;1,1" dur="14.5s" begin="11.0s"
-            repeatCount="indefinite" calcMode="spline"
-            keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+        <g filter="url(#pillGlow)">
+          <animateTransform attributeName="transform" additive="sum" type="scale"
+            values="1 1;1.14 1.14;1 1" dur="2.4s" begin="1.8s"
+            repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           <rect x="-24.0" y="-13.0" width="48" height="26" rx="13"
-            fill="rgba(34,211,238,0.12)" stroke="rgba(34,211,238,0.25)" stroke-width="0.8">
+            fill="rgba(34,211,238,0.12)" stroke="rgba(34,211,238,0.25)" stroke-width="1">
             <animate attributeName="fill" values="rgba(34,211,238,0.12);rgba(34,211,238,0.3);rgba(34,211,238,0.12)"
-              dur="14.5s" begin="11.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
             <animate attributeName="stroke" values="rgba(34,211,238,0.25);rgba(34,211,238,0.6);rgba(34,211,238,0.25)"
-              dur="14.5s" begin="11.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
-            <animate attributeName="stroke-width" values="0.8;2;0.8"
-              dur="14.5s" begin="11.0s" repeatCount="indefinite"
-              calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+              dur="2.4s" begin="1.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
+            <animate attributeName="stroke-width" values="1;2.4;1"
+              dur="2.4s" begin="1.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.34 0 0.66 1;0.34 0 0.66 1"/>
           </rect>
           <text x="0" y="4.5" fill="#67E8F9" font-family="'SF Pro Text','Inter',sans-serif"
             font-size="11" text-anchor="middle" font-weight="500">Git</text>
